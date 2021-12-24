@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 export default function CandidateList() {
 
-    
+    console.log("merhaba")
 
     const [candidates, setCandidates] = useState([])
 
