@@ -5,18 +5,31 @@ import { Icon, Label, Menu, Table } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { NavLink } from 'react-router-dom';
 import { Button } from 'semantic-ui-react'
-
+import { toast } from "react-toastify"
 export default function CandidateList() {
-
+    let candidateService= new CandidateService()
     console.log("nasılsın")
 
     const [candidates, setCandidates] = useState([])
 
     useEffect(() => {
-        let candidate= new CandidateService()
-        candidate.getCandidate().then(result=>setCandidates(result.data.data))
+       
+        candidateService.getCandidate().then(result=>setCandidates(result.data.data))
         
     }, [])
+
+    let deleteCandidate=(id)=>{
+        candidateService.deleteCandidate(id).then(result=>{
+            refreshPage()
+            toast.success("Başarıyla silindi.")
+        })
+        
+    }
+
+    const refreshPage=()=>{
+        
+        candidateService.getCandidate().then(result=>setCandidates(result.data.data))
+    }
 
 
     return (
@@ -27,6 +40,7 @@ export default function CandidateList() {
                         <Table.HeaderCell>Ad</Table.HeaderCell>
                         <Table.HeaderCell>Soyad</Table.HeaderCell>
                         <Table.HeaderCell>Email Adresi</Table.HeaderCell>
+                        <Table.HeaderCell></Table.HeaderCell>
                         <Table.HeaderCell></Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
@@ -41,6 +55,7 @@ export default function CandidateList() {
                                 <Table.Cell>{candidate.lastName}</Table.Cell>
                                 <Table.Cell>{candidate.email}</Table.Cell>
                                 <Table.Cell><Button as={NavLink} to={`/candidates/detail/${candidate.id}`}>Cv</Button></Table.Cell>
+                                <Table.Cell><Button onClick={()=>deleteCandidate(candidate.id)}>Sil</Button></Table.Cell>
                             </Table.Row>
 
                         ))
@@ -50,7 +65,7 @@ export default function CandidateList() {
 
                 <Table.Footer>
                     <Table.Row>
-                        <Table.HeaderCell colSpan='3'>
+                        <Table.HeaderCell colSpan='5'>
                             <Menu floated='right' pagination>
                                 <Menu.Item as='a' icon>
                                     <Icon name='chevron left' />

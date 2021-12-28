@@ -12,4 +12,8 @@ export default class CandidateService{
     getCandidateByCv(id){
         return axios.get("http://localhost:8080/api/candidates/getByCandidateId?candidateId="+id)
     }
+
+    deleteCandidate(id){
+        return axios.delete("http://localhost:8080/api/candidates/deleteByCandidateId?candidateId="+id)
+    }
 }

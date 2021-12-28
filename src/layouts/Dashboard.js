@@ -11,7 +11,7 @@ import JobAdvertisementList from '../pages/JobAdvertisementList'
 import jobAdvertisementAdd from '../pages/JobAdvertisementAdd'
 import { ToastContainer } from 'react-toastify'
 import CityList from '../pages/CityList'
-import CityAdd from '../pages/CityAdd'
+
 import "react-toastify/dist/ReactToastify.min.css"
 import SignedIn from './SignedIn'
 import Authentication from '../pages/Authentication'
@@ -42,15 +42,10 @@ export default function Dashboard() {
                         <Route exact path="/jobAdvertisements" component={JobAdvertisementList} />
                         {stateAuthorize[1]== null&&<Route path="/jobAdvertisements/add" component={jobAdvertisementAdd} />}
                         <Route exact path="/cities" component={CityList} />
-                        <Route path="/cities/add" component={CityAdd} />
+                       
                         <Route path="/authentication" component={Authentication} />
                         <Route path="/candidates/add" component={CandidateAdd} />
                         <Route path="/candidates/detail/:id" component={CandidateDetail} />
-
-
-
-
-
 
                     </GridColumn>
                 </GridRow>

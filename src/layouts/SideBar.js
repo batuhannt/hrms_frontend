@@ -15,28 +15,18 @@ export default function SideBar() {
     return (
         <div>
             <Menu pointing vertical className="Menu">
-                <Menu.Item as={NavLink} to="/employers"
-                    name='Employer'
-                    
-                />
-                <Menu.Item as={NavLink} to="/jobAdvertisements"
-                    name='İş İlanları'
-                    
-                />
-                {stateAuthorize[1]== null&&<Menu.Item as={NavLink} to="/jobAdvertisements/add" name='İş İlanı Ekle' />}
+                <Menu.Item as={NavLink} to="/employers">İş Verenler</Menu.Item>
 
-                <Menu.Item as={NavLink} to="/cities/add"
-                    name="Şehir Ekle"
+                <Menu.Item as={NavLink} to="/jobAdvertisements">İş İlanları</Menu.Item>
+
+                {stateAuthorize[1]== null&&<Menu.Item as={NavLink} to="/jobAdvertisements/add">İş İlanı Ekle</Menu.Item>}
+
+                
+                  
+                <Menu.Item as={NavLink} to="/candidates">Adaylar</Menu.Item>
                     
-                />
-                <Menu.Item as={NavLink} to="/candidates"
-                    name='Aday Listesi'
-                    
-                />
-                <Menu.Item as={NavLink} to="/candidates/add"
-                    name='Aday Ekle'
-                    
-                />
+                <Menu.Item as={NavLink} to="/candidates/add" >Aday Ekle</Menu.Item>
+                
             </Menu>
         </div>
     )
