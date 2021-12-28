@@ -13,9 +13,10 @@ export default function EmployerList() {
         
         let employerService = new EmployerService()
         employerService.getEmployer().then(result => setEmployers(result.data.data))
+        console.log("İÇ")
         
     },[])
-
+    console.log("DIŞ")
     const handleRemove=(employer)=>{
         
         employerService.removeEmployer(employer.id).then(result=>refreshPage())

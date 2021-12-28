@@ -4,7 +4,7 @@ import { FormField, Label } from 'semantic-ui-react'
 
 export default function KodlamaIoTextInput({ ...props }) {
     const [fields, meta] = useField(props)
-
+    console.log(meta)
     return (
 
         <FormField error={!!meta.error && meta.touched}>

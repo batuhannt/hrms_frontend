@@ -16,6 +16,8 @@ import "react-toastify/dist/ReactToastify.min.css"
 import SignedIn from './SignedIn'
 import Authentication from '../pages/Authentication'
 import { useSelector} from 'react-redux'
+import CandidateAdd from '../pages/CandidateAdd'
+import CandidateDetail from '../pages/CandidateDetail'
 
 export default function Dashboard() {
 
@@ -36,12 +38,14 @@ export default function Dashboard() {
                         <Route exact path="/employers" component={EmployerList} />
                         <Route path="/employers/:name" component={EmployerDetail} />
 
-                        <Route path="/candidates" component={CandidateList} />
+                        <Route exact path="/candidates" component={CandidateList} />
                         <Route exact path="/jobAdvertisements" component={JobAdvertisementList} />
                         {stateAuthorize[1]== null&&<Route path="/jobAdvertisements/add" component={jobAdvertisementAdd} />}
                         <Route exact path="/cities" component={CityList} />
                         <Route path="/cities/add" component={CityAdd} />
                         <Route path="/authentication" component={Authentication} />
+                        <Route path="/candidates/add" component={CandidateAdd} />
+                        <Route path="/candidates/detail/:id" component={CandidateDetail} />
 
 
 

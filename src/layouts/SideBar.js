@@ -33,6 +33,10 @@ export default function SideBar() {
                     name='Aday Listesi'
                     
                 />
+                <Menu.Item as={NavLink} to="/candidates/add"
+                    name='Aday Ekle'
+                    
+                />
             </Menu>
         </div>
     )

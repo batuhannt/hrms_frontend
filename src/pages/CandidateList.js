@@ -3,6 +3,8 @@ import { useParams } from 'react-router'
 import CandidateService from '../services/CandidateService'
 import { Icon, Label, Menu, Table } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import { Button } from 'semantic-ui-react'
 
 export default function CandidateList() {
 
@@ -25,6 +27,7 @@ export default function CandidateList() {
                         <Table.HeaderCell>Ad</Table.HeaderCell>
                         <Table.HeaderCell>Soyad</Table.HeaderCell>
                         <Table.HeaderCell>Email Adresi</Table.HeaderCell>
+                        <Table.HeaderCell></Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -37,6 +40,7 @@ export default function CandidateList() {
                                 <Table.Cell><Link to={`/candidates/${candidate.firstName}`}>{candidate.firstName}</Link></Table.Cell>
                                 <Table.Cell>{candidate.lastName}</Table.Cell>
                                 <Table.Cell>{candidate.email}</Table.Cell>
+                                <Table.Cell><Button as={NavLink} to={`/candidates/detail/${candidate.id}`}>Cv</Button></Table.Cell>
                             </Table.Row>
 
                         ))
