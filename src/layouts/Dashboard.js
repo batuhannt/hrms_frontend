@@ -18,6 +18,7 @@ import Authentication from '../pages/Authentication'
 import { useSelector} from 'react-redux'
 import CandidateAdd from '../pages/CandidateAdd'
 import CandidateDetail from '../pages/CandidateDetail'
+import JobPostingStaffValidationList from '../pages/JobPostingStaffValidationList'
 
 export default function Dashboard() {
 
@@ -46,6 +47,8 @@ export default function Dashboard() {
                         <Route path="/authentication" component={Authentication} />
                         <Route path="/candidates/add" component={CandidateAdd} />
                         <Route path="/candidates/detail/:id" component={CandidateDetail} />
+                        <Route path="/jobPostingStaffValidation" component={JobPostingStaffValidationList} />
+
 
                     </GridColumn>
                 </GridRow>

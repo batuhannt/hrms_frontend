@@ -26,6 +26,7 @@ export default function SideBar() {
                 <Menu.Item as={NavLink} to="/candidates">Adaylar</Menu.Item>
                     
                 <Menu.Item as={NavLink} to="/candidates/add" >Aday Ekle</Menu.Item>
+                {stateAuthorize[1]== null&&<Menu.Item as={NavLink} to="/jobPostingStaffValidation" >Bekleyen İş İlanları</Menu.Item>}
                 
             </Menu>
         </div>

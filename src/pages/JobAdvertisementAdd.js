@@ -60,7 +60,7 @@ export default function JobAdvertisementAdd() {
                         maxSalary: parseInt(values.maxSalary, 10),
                         minSalary: parseInt(values.minSalary, 10),
                         openPositionAmount: parseInt(values.openPositionAmount, 10),
-                        employer: { id: 1 },
+                        employer: { id: 9 },
                         positions: { id: parseInt(values.positionId, 10) }
                     }
                     jobAdvertisementService.postJobAdvertisement(jobAdvertisement).then(result => toast.success("Başarıyla Eklendi"))
